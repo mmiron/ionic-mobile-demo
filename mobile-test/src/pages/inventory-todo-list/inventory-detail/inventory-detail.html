@@ -1,0 +1,34 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Picking 2 of 3 items</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+  <div class="item-detail" padding>
+    <h1>Inventory details</h1>
+    <!--<h2>{{item.partNumber}}</h2>-->
+    <p>{{ 'PART_NUMBER' | translate }} {{item.partNumber}}</p>
+    <p>{{ 'SERIAL_NUMBER' | translate }} {{item.serialNumber}}</p>
+    <p>{{ 'BIN' | translate }} {{item.bin}}</p>
+
+    <h1>View alternative parts</h1>
+    <ion-row>
+      <ion-col item-end>
+        <button ion-button full (click)="scanBarcode()">
+          <div>Scan barcode</div>
+        </button>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col item-end>
+        <button ion-button full color="light" (click)="skipItem()">
+          <div>skip item</div>
+        </button>
+      </ion-col>
+    </ion-row>
+  </div>
+</ion-content>

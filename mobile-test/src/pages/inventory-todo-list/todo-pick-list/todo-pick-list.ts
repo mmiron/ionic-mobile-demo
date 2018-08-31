@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
-import { IonicPage, ModalController, NavController } from 'ionic-angular';
+import { IonicPage, NavParams, NavController } from 'ionic-angular';
+
+import { InventoryTodo } from '../../../models/inventory-todo';
 
 @IonicPage()
 @Component({
@@ -7,31 +9,16 @@ import { IonicPage, ModalController, NavController } from 'ionic-angular';
   templateUrl: 'todo-pick-list.html'
 })
 export class TodoPickListPage {
-  // currentInventoryActions: InventoryAction[];
+  selectedInventoryTodo : InventoryTodo
   todoPickList : any = [];
-  inventoryItem : any = {
-    name : "DAL/DOCK-1"
-  }
 
-  constructor(public navCtrl: NavController, public modalCtrl: ModalController) {
-    // this.currentInventoryActions = this.inventoryActions.query();
-    this.todoPickList = [{
-          "partNumber" : "65437-7",
-          "serialNumber": "35476-7",
-          "bin" : "19-A"
-        },
-        {
-          "partNumber" : "88320-3",
-          "serialNumber": "53233-6",
-          "bin" : "21-A"
-        },{
-          "partNumber" : "53242-6",
-          "serialNumber": "41343-2",
-          "bin" : "22-A"
-        }];
+  constructor(public navCtrl: NavController, public navParams: NavParams) {
+    this.selectedInventoryTodo = this.navParams.get("inventoryTodo");
   }
 
   viewPickListItem(todoPickList : any) {
-    this.navCtrl.push('InventoryTodoListPage');
+    this.navCtrl.push('InventoryDetailPage', {
+      todoPickList : todoPickList
+    });
   }
 }

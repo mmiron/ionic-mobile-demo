@@ -1,7 +1,7 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>{{ 'PICK_LIST_DUE_AT' | translate }} {{inventoryItem.name}}</ion-title>
+    <ion-title>{{ 'PICK_LIST_DUE_AT' | translate }} {{selectedInventoryTodo.name}}</ion-title>
   </ion-navbar>
 
 </ion-header>
@@ -9,7 +9,7 @@
 <ion-content>
   <p class="text-center">Scan barcode to begin picking</p>
   <ion-list>
-    <ion-item-sliding *ngFor="let item of todoPickList">
+    <ion-item-sliding *ngFor="let item of selectedInventoryTodo.pickList">
       <ion-item>
         <ion-card>
           <div class="card-title">{{ 'PART_NUMBER' | translate }} {{item.partNumber}}</div>
@@ -17,7 +17,7 @@
           <div class="card-title">{{ 'BIN' | translate }} {{item.bin}}</div>
           <ion-row>
             <ion-col item-end>
-              <button ion-button icon-start small (click)="viewItem(item)">
+              <button ion-button icon-start small (click)="viewPickListItem(item)">
                 <!--<ion-icon name="thumbs-up"></ion-icon>-->
                 <div>View Item</div>
               </button>

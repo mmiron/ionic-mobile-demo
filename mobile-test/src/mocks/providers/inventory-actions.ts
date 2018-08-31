@@ -6,12 +6,6 @@ import { InventoryAction } from '../../models/inventory-action';
 export class InventoryActions {
   inventoryActions: InventoryAction[] = [];
 
-  defaultInventoryAction: any = {
-    "name": "Pick inventory",
-    "icon": "assets/img/inventory-actions/pick.png"
-  };
-
-
   constructor() {
     let inventoryActions = [
       {
