@@ -1,0 +1,24 @@
+<ion-header>
+
+  <ion-toolbar>
+    <ion-avatar item-start>
+      <img src="/assets/img/placeholder-avatar.png">
+    </ion-avatar>
+    <p>{{user.email}}</p>
+  </ion-toolbar>
+
+</ion-header>
+
+<ion-content>
+
+  <ion-list>
+    <ion-item-sliding *ngFor="let inventoryAction of currentInventoryActions">
+      <button ion-item (click)="openInventoryAction(inventoryAction)">
+        <ion-avatar item-start>
+          <img [src]="inventoryAction.icon" />
+        </ion-avatar>
+        <h2>{{inventoryAction.name}}</h2>
+      </button>
+    </ion-item-sliding>
+  </ion-list>
+</ion-content>

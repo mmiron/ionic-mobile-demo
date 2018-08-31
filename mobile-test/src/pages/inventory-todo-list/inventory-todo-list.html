@@ -1,0 +1,23 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>{{ 'TODO_LIST_TITLE' | translate }}</ion-title>
+
+    <ion-buttons end>
+      <button ion-button icon-only (click)="searchTodos()">
+        <ion-icon name="search"></ion-icon>
+      </button>
+      <button ion-button icon-only (click)="filterTodos()">
+        <ion-icon name="inventory-todo-list-filter"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content>
+  <ion-tabs tabsPlacement="top">
+    <ion-tab [root]="tabUnassignedRoot" [tabTitle]="tabUnassigned"></ion-tab>
+    <ion-tab [root]="tabAssignedRoot" [tabTitle]="tabAssigned"></ion-tab>
+  </ion-tabs>
+</ion-content>

@@ -1,0 +1,20 @@
+<ion-content>
+  <ion-list>
+    <ion-item-sliding *ngFor="let assignedTodo of assignedTodos">
+      <button ion-item (click)="openAssignedTodo(assignedTodo)">
+        <ion-avatar item-start>
+          <img [class]="assignedTodo.className" />
+        </ion-avatar>
+        <h2>{{assignedTodo.name}}</h2>
+        <p>{{assignedTodo.due}}</p>
+        <!--<ion-note item-end *ngIf="item.note">{{item.note}}</ion-note>-->
+      </button>
+
+      <ion-item-options>
+        <!--<button ion-button color="danger" (click)="deleteItem(item)">-->
+        <!--  {{ 'DELETE_BUTTON' | translate }}-->
+        <!--</button>-->
+      </ion-item-options>
+    </ion-item-sliding>
+  </ion-list>
+</ion-content>

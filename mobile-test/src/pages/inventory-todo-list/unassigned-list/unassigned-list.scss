@@ -1,0 +1,38 @@
+page-unassigned-list {
+    img {
+        &[class*="unassigned-list-filter"] {
+            mask-size: contain;
+            mask-position: 50% 50%;
+            mask-repeat: no-repeat;
+            background: currentColor;
+            width: 1em;
+            height: 1em;
+            mask-image: url(/assets/img/inventory-todos/baseline-filter_list-24px.svg);
+        }
+
+        &[class*="todo-circle-"] {
+            mask-size: contain;
+            mask-position: 50% 50%;
+            mask-repeat: no-repeat;
+            background: currentColor;
+            width: 1em;
+            height: 1em;
+        }
+
+        &[class*="todo-circle-blue"] {
+            mask-image: url(/assets/img/inventory-todos/blue-circle.png);
+        }
+        
+        &[class*="todo-red-blue"] {
+            mask-image: url(/assets/img/inventory-todos/red-circle.png);
+        }
+        
+        &[class*="todo-purple-blue"] {
+            mask-image: url(/assets/img/inventory-todos/purple-circle.png);
+        }
+        
+        &[class*="todo-brown-blue"] {
+            mask-image: url(/assets/img/inventory-todos/brown-circle.png);
+        }
+    }
+}
