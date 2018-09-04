@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { BarcodeScanner } from '@ionic-native/barcode-scanner';
 
-// import { Items } from '../../providers';
 
 @IonicPage()
 @Component({
@@ -11,8 +11,20 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 export class InventoryDetailPage {
   item: any;
 
-  constructor(public navCtrl: NavController, navParams: NavParams) {
+  constructor(public navCtrl: NavController, navParams: NavParams, public barcodeScanner: BarcodeScanner) {
     this.item = navParams.get('todoPickList');
+  }
+  
+  scanBarcode() {
+    this.barcodeScanner.scan().then(barcodeData => {
+     console.log('Barcode data', barcodeData);
+    }).catch(err => {
+        console.log('Error', err);
+    });
+  }
+  
+  skipItem() {
+    
   }
 
 }
